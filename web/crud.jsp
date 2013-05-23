@@ -108,7 +108,7 @@
             var info = "";
             $("#getButt").click(function() {
                 $.ajax({
-                    url: "http://localhost:8080/wannabe2/webresources/rest.persondata/" + $("#getID").val() + "?",
+                    url: "http://localhost:8080/wannabekrak/webresources/rest.persondata/" + $("#getID").val() + "?",
                     cache: false,
                     dataType: "json",
                     success: dataReady
@@ -124,7 +124,7 @@
             $("#DelButt").click(function() {
                 var id = $("#getID").val();
                 $.ajax({
-                    url: "http://localhost:8080/wannabe2/webresources/rest.persondata/" + id + "?",
+                    url: "http://localhost:8080/wannabekrak/webresources/rest.persondata/" + id + "?",
                     type: "delete",
                     success: function setDelStatus() {
                         $("#delStatus").text("slettet");
@@ -147,7 +147,7 @@
                 console.log(JSON.stringify(json));
                 $.ajax({
                     type: "post",
-                    url: "http://localhost:8080/wannabe2/webresources/rest.persondata/?",
+                    url: "http://localhost:8080/wannabekrak/webresources/rest.persondata/?",
                     data: JSON.stringify(json),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
@@ -162,7 +162,6 @@
                 return false;
             });
             $("#editButt").click(function() {
-            alert("I am in edit")
                 var json = {
                     "city":""+$("#editCity").val(),
                     "firstName":""+$("#editFirstName").val(),
@@ -176,12 +175,11 @@
                 console.log(JSON.stringify(json));
                 $.ajax({
                     type: "put",
-                    url: "http://localhost:8080/wannabe2/webresources/rest.persondata/?",
+                    url: "http://localhost:8080/wannabekrak/webresources/rest.persondata/?",
                     data: JSON.stringify(json),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function edited(data) {
-                        alert("Edited")
                         console.log(data);
                     },
                     failure: function(errMsg){
@@ -199,7 +197,7 @@
             var zipcode ="";
             var phone ="";
                 $.ajax({
-                    url: "http://localhost:8080/wannabe2/webresources/rest.persondata/" + $("#getEditId").val() + "?",
+                    url: "http://localhost:8080/wannabekrak/webresources/rest.persondata/" + $("#getEditId").val() + "?",
                     cache: false,
                     dataType: "json",
                     success: function gotten(data){
